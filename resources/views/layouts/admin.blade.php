@@ -56,7 +56,7 @@
       <nav id="side_nav">
         <div class="top">
           <div class="nav_link_container">
-            <a href="#"><i class="fal fa-tachometer-alt"></i> <span>Dashboard</span></a>
+            <a href="/admin"><i class="fal fa-tachometer-alt"></i> <span>Dashboard</span></a>
           </div>
 
           <div class="nav_link_container">
