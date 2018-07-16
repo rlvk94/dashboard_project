@@ -66,6 +66,14 @@
               <a href="{{ route('users.create') }}">Create User</a>
             </div>
           </div>
+
+          <div class="nav_link_container">
+            <a href="#"><i class="fal fa-file"></i> <span>Posts</span></a>
+            <div class="subMenu">
+              <a href="{{ route('posts.index') }}">All Posts</a>
+              <a href="{{ route('posts.create') }}">Create Post</a>
+            </div>
+          </div>
         </div>
 
         <div class="bottom">
