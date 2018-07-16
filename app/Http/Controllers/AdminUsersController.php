@@ -95,25 +95,25 @@ class AdminUsersController extends Controller
      */
     public function update(UserEditRequest $request, $id)
     {
-        $user = User::findOrFail($id);
+      $user = User::findOrFail($id);
 
-        if (trim($request->password == "")) {
-          $input = $request->except('password');
-        } else {
-          $input = $request->all();
-          $input['password'] = bcrypt($request->password);
-        }
+      if (trim($request->password == "")) {
+        $input = $request->except('password');
+      } else {
+        $input = $request->all();
+        $input['password'] = bcrypt($request->password);
+      }
 
-        if ($file = $request->file('photo_id')) {
-          $name = time() . $file->getClientOriginalName();
-          $file->move('uploads', $name);
-          $photo = Photo::create(['file'=>$name]);
-          $input['photo_id'] = $photo->id;
-        }
+      if ($file = $request->file('photo_id')) {
+        $name = time() . $file->getClientOriginalName();
+        $file->move('uploads', $name);
+        $photo = Photo::create(['file'=>$name]);
+        $input['photo_id'] = $photo->id;
+      }
 
-        $user->update($input);
+      $user->update($input);
 
-        return redirect('/admin/users');
+      return redirect('/admin/users');
     }
 
     /**
