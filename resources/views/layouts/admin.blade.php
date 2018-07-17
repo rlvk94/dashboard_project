@@ -11,6 +11,7 @@
     <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-87DrmpqHRiY8hPLIr7ByqhPIywuSsjuQAfMXAE0sMUpY3BM7nXjf+mLIUSvhDArs" crossorigin="anonymous"> -->
 
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    @yield('styles')
   </head>
   <body id="dashboard">
     <header>
@@ -86,8 +87,8 @@
           <div class="nav_link_container">
             <a href="#"><i class="fal fa-images"></i> <span>Media</span></a>
             <div class="subMenu">
-              <a href="{{ route('categories.index') }}">All Categories</a>
-              <a href="{{ route('categories.create') }}">Create Category</a>
+              <a href="{{ route('media.index') }}">All Media</a>
+              <a href="{{ route('media.create') }}">Upload Media</a>
             </div>
           </div>
         </div>
@@ -110,5 +111,6 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+    @yield('script')
   </body>
 </html>

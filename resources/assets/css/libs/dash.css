@@ -275,6 +275,7 @@
 
 main {
   position: fixed;
+  overflow-y: scroll;
   top: 70px;
   left: 60px;
   width: calc(100vw - 60px);
@@ -291,4 +292,26 @@ main {
   }
   .fa-file {
     margin-left: 6px;
+  }
+  .mediaItemContainer .buttons,
+  .mediaItemContainer .mediaImage {
+    transition: opacity .3s;
+  }
+
+  .mediaItemContainer .buttons {
+    display:flex;
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .mediaItemContainer:hover .mediaImage {
+    opacity: .6;
+  }
+  .mediaItemContainer:hover .buttons {
+    opacity: 1;
+    z-index: 3;
   }
