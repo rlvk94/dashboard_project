@@ -68,10 +68,26 @@
           </div>
 
           <div class="nav_link_container">
-            <a href="#"><i class="fal fa-file"></i> <span>Posts</span></a>
+            <a href="#"><i class="fal fa-copy" style="margin-left: 3px;"></i> <span>Posts</span></a>
             <div class="subMenu">
               <a href="{{ route('posts.index') }}">All Posts</a>
               <a href="{{ route('posts.create') }}">Create Post</a>
+            </div>
+          </div>
+
+          <div class="nav_link_container">
+            <a href="#"><i class="fal fa-tags"></i> <span>Categories</span></a>
+            <div class="subMenu">
+              <a href="{{ route('categories.index') }}">All Categories</a>
+              <a href="{{ route('categories.create') }}">Create Category</a>
+            </div>
+          </div>
+
+          <div class="nav_link_container">
+            <a href="#"><i class="fal fa-images"></i> <span>Media</span></a>
+            <div class="subMenu">
+              <a href="{{ route('categories.index') }}">All Categories</a>
+              <a href="{{ route('categories.create') }}">Create Category</a>
             </div>
           </div>
         </div>

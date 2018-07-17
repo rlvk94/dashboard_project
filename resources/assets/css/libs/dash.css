@@ -289,3 +289,6 @@ main {
   main h1 {
     margin: 0 0 20px;
   }
+  .fa-file {
+    margin-left: 6px;
+  }
