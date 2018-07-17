@@ -1,17 +1,17 @@
 @extends('layouts.admin')
 
 @section('content')
-  {{-- @if (Session::has('deleted_user'))
-    <p class="alert alert-danger">{{ session('deleted_user') }}</p>
+  @if (Session::has('deleted_post'))
+    <p class="alert alert-danger">{{ session('deleted_post') }}</p>
   @endif
 
-  @if (Session::has('updated_user'))
-    <p class="alert alert-success">{{ session('updated_user') }}</p>
+  @if (Session::has('updated_post'))
+    <p class="alert alert-success">{{ session('updated_post') }}</p>
   @endif
 
-  @if (Session::has('created_user'))
-    <p class="alert alert-success">{{ session('created_user') }}</p>
-  @endif --}}
+  @if (Session::has('created_post'))
+    <p class="alert alert-success">{{ session('created_post') }}</p>
+  @endif
 
   <h1>All Posts</h1>
 
@@ -32,7 +32,7 @@
           <tr>
             <td><img src="{{ $post->photo ? $post->photo->file : 'http://via.placeholder.com/50x50' }}" height="50"></td>
             <td><a href="{{ route('posts.edit', $post->id) }}">{{ $post->title }}</a></td>
-            <td>{{ $post->category_id}}</td>
+            <td>{{ $post->category ? $post->category->name : 'Uncategorized' }}</td>
             <td>{{ $post->user->name}}</td>
             <td>{{ $post->created_at->diffForHumans() }}</td>
             <td>{{ $post->updated_at->diffForHumans() }}</td>

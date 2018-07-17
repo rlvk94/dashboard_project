@@ -25,7 +25,7 @@ class PostRequest extends FormRequest
     {
         return [
           'title'=>'required',
-          'category_id'=>'required',
+          // 'category_id'=>'required',
           'photo_id'=>'required',
           'content'=>'required',
         ];
