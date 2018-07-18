@@ -62,18 +62,20 @@
 
           @if (count($comment->replies) > 0)
             @foreach ($comment->replies as $reply)
-              <!-- Nested Comment -->
-              <div class="media">
-                <a class="pull-left" href="#">
-                  <img height="64" class="media-object" src="{{ $reply->user->photo->file }}" alt="">
-                </a>
-                <div class="media-body">
-                  <h4 class="media-heading">{{ $reply->user->name }}
-                    <small>{{ $reply->created_at->diffForHumans() }}</small>
-                  </h4>
-                  <p>{{ $reply->content }}</p>
+              @if($reply->is_active === 1)
+                <!-- Nested Comment -->
+                <div class="media">
+                  <a class="pull-left" href="#">
+                    <img height="64" class="media-object" src="{{ $reply->user->photo->file }}" alt="">
+                  </a>
+                  <div class="media-body">
+                    <h4 class="media-heading">{{ $reply->user->name }}
+                      <small>{{ $reply->created_at->diffForHumans() }}</small>
+                    </h4>
+                    <p>{{ $reply->content }}</p>
+                  </div>
                 </div>
-              </div>
+              @endif
             @endforeach
           @endif
 

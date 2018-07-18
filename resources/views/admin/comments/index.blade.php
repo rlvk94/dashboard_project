@@ -11,6 +11,7 @@
           <th>User</th>
           <th>Comment</th>
           <th>Created</th>
+          <th>Replies</th>
           <th></th>
           <th></th>
         </tr>
@@ -22,6 +23,7 @@
             <td>{{ $comment->user->name }}</td>
             <td>{{ $comment->content }}</td>
             <td>{{ $comment->created_at->diffForHumans() }}</td>
+            <td><a href="{{ route('replies.show', $comment->id) }}">{{ $comment->replies->count() }}</a></td>
             <td>
               {!! Form::model($comment, ['method'=>'PATCH', 'action'=>['CommentsController@update', $comment->id]]) !!}
                 @if ($comment->is_active === 1)

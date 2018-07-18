@@ -45,6 +45,6 @@ $(".avatar").click(function() {
 });
 
 $(".toggle-reply-form").click(function() {
-  $(this).siblings('form').slideToggle();
-  $(this).slideToggle();
+  $(this).siblings('form').slideToggle(400);
+  $(this).slideToggle(200);
 });
