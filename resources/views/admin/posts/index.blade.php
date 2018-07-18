@@ -24,6 +24,8 @@
         <th>Author</th>
         <th>Created</th>
         <th>Updated</th>
+        <th>Comments</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -36,6 +38,8 @@
             <td>{{ $post->user->name}}</td>
             <td>{{ $post->created_at->diffForHumans() }}</td>
             <td>{{ $post->updated_at->diffForHumans() }}</td>
+            <td>{{ $post->comments->count() }}</td>
+            <td><a target="_blank" href="{{ route('home.post', $post->id) }}">View Post</a></td>
           </tr>
         @endforeach
       @endif

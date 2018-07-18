@@ -91,6 +91,13 @@
               <a href="{{ route('media.create') }}">Upload Media</a>
             </div>
           </div>
+
+          <div class="nav_link_container">
+            <a href="#"><i class="fal fa-comments"></i></i> <span>Comments</span></a>
+            <div class="subMenu">
+              <a href="{{ route('comments.index') }}">All Comments</a>
+            </div>
+          </div>
         </div>
 
         <div class="bottom">
