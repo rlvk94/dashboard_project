@@ -77,7 +77,9 @@
             @endforeach
           @endif
 
-          {!! Form::open(['method'=>'POST', 'action'=>'CommentRepliesController@store'])!!}
+          <button class="toggle-reply-form btn btn-primary">Reply</button>
+
+          {!! Form::open(['method'=>'POST', 'action'=>'CommentRepliesController@store', 'class'=>'reply-form'])!!}
           {!! Form::hidden('comment_id', $comment->id) !!}
           <div class="form-group" style="margin-top: 20px;">
             {!! Form::textarea('content', null, ['class'=>'form-control', 'rows'=>2]) !!}

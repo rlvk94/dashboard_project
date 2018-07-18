@@ -43,3 +43,8 @@ $(".subMenu").click(function(e) {
 $(".avatar").click(function() {
   $(".userMenu").toggleClass('active');
 });
+
+$(".toggle-reply-form").click(function() {
+  $(this).siblings('form').slideToggle();
+  $(this).slideToggle();
+});

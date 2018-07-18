@@ -8691,6 +8691,13 @@ button.close {
   padding-top: 0;
 }
 
+.toggle-reply-form {
+  margin-top: 10px;
+}
+
+.reply-form {
+  display: none;
+}
 * {
   padding: 0;
   margin: 0;
