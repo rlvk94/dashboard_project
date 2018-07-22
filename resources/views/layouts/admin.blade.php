@@ -1,3 +1,12 @@
+<?php
+  function activeUrl($url) {
+    if ($_SERVER['REQUEST_URI'] == $url) {
+      return true;
+    }
+    return false;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,11 +65,11 @@
 
       <nav id="side_nav">
         <div class="top">
-          <div class="nav_link_container">
+          <div class="nav_link_container <?php echo activeUrl('/admin') ? 'active' : null ?>">
             <a href="/admin"><i class="fal fa-tachometer-alt"></i> <span>Dashboard</span></a>
           </div>
 
-          <div class="nav_link_container">
+          <div class="nav_link_container <?php echo activeUrl('/admin/users') ? 'active' : null ?>">
             <a href="#"><i class="fal fa-users"></i> <span>Users</span></a>
             <div class="subMenu">
               <a href="{{ route('users.index') }}">All Users</a>
@@ -68,7 +77,7 @@
             </div>
           </div>
 
-          <div class="nav_link_container">
+          <div class="nav_link_container <?php echo activeUrl('/admin/posts') ? 'active' : null ?>">
             <a href="#"><i class="fal fa-copy" style="margin-left: 3px;"></i> <span>Posts</span></a>
             <div class="subMenu">
               <a href="{{ route('posts.index') }}">All Posts</a>
@@ -76,7 +85,7 @@
             </div>
           </div>
 
-          <div class="nav_link_container">
+          <div class="nav_link_container <?php echo activeUrl('/admin/categories') ? 'active' : null ?>">
             <a href="#"><i class="fal fa-tags"></i> <span>Categories</span></a>
             <div class="subMenu">
               <a href="{{ route('categories.index') }}">All Categories</a>
@@ -84,7 +93,7 @@
             </div>
           </div>
 
-          <div class="nav_link_container">
+          <div class="nav_link_container <?php echo activeUrl('/admin/media') ? 'active' : null ?>">
             <a href="#"><i class="fal fa-images"></i> <span>Media</span></a>
             <div class="subMenu">
               <a href="{{ route('media.index') }}">All Media</a>
@@ -92,7 +101,7 @@
             </div>
           </div>
 
-          <div class="nav_link_container">
+          <div class="nav_link_container <?php echo activeUrl('/admin/comments') ? 'active' : null ?>">
             <a href="#"><i class="fal fa-comments"></i></i> <span>Comments</span></a>
             <div class="subMenu">
               <a href="{{ route('comments.index') }}">All Comments</a>

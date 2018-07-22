@@ -31,3 +31,5 @@
 
   @include('includes.errors')
 @endsection
+
+@include('includes.tinymce')

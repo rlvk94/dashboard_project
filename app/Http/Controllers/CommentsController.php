@@ -43,7 +43,7 @@ class CommentsController extends Controller
       $data = [
         'post_id' => $request->post_id,
         'user_id' => $user->id,
-        'content' => $request->content
+        'content' => $request->content,
       ];
 
       Comment::create($data);

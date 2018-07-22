@@ -308,10 +308,48 @@ main {
     transform: translateX(-50%);
   }
 
+  .mediaItemContainer:hover {
+    cursor: pointer;
+  }
+
   .mediaItemContainer:hover .mediaImage {
     opacity: .6;
   }
+
   .mediaItemContainer:hover .buttons {
     opacity: 1;
     z-index: 3;
+  }
+  
+  .mediaItemContainer .checkToggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .6);
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  .mediaItemContainer .checkToggle i {
+    opacity: 0;
+    transition: opacity 1s;
+    color: #8DC7CB;
+  }
+
+  .mediaItemContainer .checkToggle.active {
+    opacity: 1;
+    z-index: 3;
+  }
+
+  .mediaItemContainer .checkToggle.active i {
+    opacity: 1;
   }

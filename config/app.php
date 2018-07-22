@@ -164,6 +164,7 @@ return [
          * Collective Providers
          */
         Collective\Html\HtmlServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
 
     ],
 

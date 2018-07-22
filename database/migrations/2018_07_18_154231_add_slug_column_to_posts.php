@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPhotoIdToUsers extends Migration
+class AddSlugColumnToPosts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddPhotoIdToUsers extends Migration
      */
     public function up()
     {
-      Schema::table('users', function (Blueprint $table) {
-          $table->string('photo_id')->nullable();
+      Schema::table('posts', function (Blueprint $table) {
+        $table->string('slug')->nullable();
       });
     }
 
@@ -25,8 +25,8 @@ class AddPhotoIdToUsers extends Migration
      */
     public function down()
     {
-      Schema::table('users', function (Blueprint $table) {
-          $table->dropColumn('photo_id');
+      Schema::table('posts', function (Blueprint $table) {
+        $table->dropColumn('slug');
       });
     }
 }

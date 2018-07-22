@@ -885,7 +885,6 @@ $(document).ready(function () {
 $('.toggle').click(function () {
   $(this).toggleClass('active');
   $("#side_nav").toggleClass('active');
-  $(".nav_link_container").removeClass('active');
   $(".nav_link_container").children('.subMenu').slideUp(300);
   $("main").toggleClass('active');
 });
@@ -904,12 +903,6 @@ $(".nav_link_container").click(function () {
 
   // Activate clicked link
   $(this).children('.subMenu').slideToggle(300);
-  $(this).toggleClass('active');
-
-  // Hides previous active elements
-  if ($(this).siblings('.nav_link_container').hasClass('active')) {
-    $(this).siblings('.nav_link_container').removeClass('active');
-  }
 
   if ($(this).parent().siblings().children('.nav_link_container').hasClass('active')) {
     $(this).parent().siblings().children('.nav_link_container').removeClass('active');
@@ -931,6 +924,14 @@ $(".avatar").click(function () {
 $(".toggle-reply-form").click(function () {
   $(this).siblings('form').slideToggle(400);
   $(this).slideToggle(200);
+});
+
+$(".mediaItemContainer").click(function () {
+  $(this).children('.checkToggle').toggleClass('active');
+});
+
+$(".mediaItemContainer .buttons").click(function (e) {
+  e.stopPropagation();
 });
 
 /***/ })

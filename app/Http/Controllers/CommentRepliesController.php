@@ -41,7 +41,7 @@ class CommentRepliesController extends Controller
       $data = [
         'comment_id' => $request->comment_id,
         'user_id' => $user->id,
-        'content' => $request->content
+        'content' => $request->content,
       ];
 
       CommentReply::create($data);

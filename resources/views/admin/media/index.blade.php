@@ -10,6 +10,7 @@
           @foreach ($media as $photo)
             <div class="mediaItemContainer" style="position: relative; margin: 0 10px 10px 0;">
               <div class="mediaImage" style="position: relative; z-index: 2; background-image: url('{{ $photo->file }}'); height: 200px; width: 200px; background-size: cover; background-position: center; border-radius: 4px;"></div>
+              <div class="checkToggle"><i class="far fa-check fa-2x"></i></div>
               <div class="buttons">
                 <a href="{{ route('media.edit', $photo->id) }}" style="display: block; margin-right: 10px; background-color: #9DE0AD; border-radius: 50%; line-height: 40px; text-align: center; width: 40px; height: 40px;"><i style="color: white;" class="fal fa-pen"></i></a>
                 {!! Form::open(['method'=>'DELETE', 'action'=>['MediaController@destroy', $photo->id]]) !!}
