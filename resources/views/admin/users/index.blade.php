@@ -32,7 +32,7 @@
       @if($users)
         @foreach($users as $user)
           <tr>
-            <td><img src="{{ $user->photo ? $user->photo->file : 'http://via.placeholder.com/50x50' }}" height="50"></td>
+            <td><div class="image" style="background-image: url('{{ $user->photo ? $user->photo->file : 'http://via.placeholder.com/50x50' }}');"></div></td>
             <td><a href="{{ route('users.edit', $user->id) }}">{{ $user->name }}</a></td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->role->name}}</td>

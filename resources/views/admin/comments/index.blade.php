@@ -28,16 +28,16 @@
               {!! Form::model($comment, ['method'=>'PATCH', 'action'=>['CommentsController@update', $comment->id]]) !!}
                 @if ($comment->is_active === 1)
                   {!! Form::hidden('is_active', 0) !!}
-                  {!! Form::submit('Unapprove', ['class'=>'btn btn-danger']) !!}
+                  {!! Form::submit('Unapprove', ['class'=>'btn danger']) !!}
                 @else
                   {!! Form::hidden('is_active', 1) !!}
-                  {!! Form::submit('Approve', ['class'=>'btn btn-success']) !!}
+                  {!! Form::submit('Approve', ['class'=>'btn success']) !!}
                 @endif
               {!! Form::close() !!}
             </td>
             <td>
               {!! Form::open(['method'=>'DELETE', 'action'=>['CommentsController@destroy', $comment->id]]) !!}
-                {!! Form::submit('Delete', ['class'=>'btn btn-danger']) !!}
+                {!! Form::submit('Delete', ['class'=>'btn danger']) !!}
               {!! Form::close() !!}
             </td>
           </tr>

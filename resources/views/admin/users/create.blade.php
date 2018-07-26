@@ -4,39 +4,23 @@
   <h1>Create User</h1>
 
   {!! Form::open(['method'=>'POST', 'action'=>'AdminUsersController@store', 'files'=>TRUE]) !!}
-  <div class="form-group">
-    {!! Form::label('name', 'Name:') !!}
-    {!! Form::text('name', null, ['class'=>'form-control']) !!}
-  </div>
 
-  <div class="form-group">
-    {!! Form::label('email', 'Email:') !!}
-    {!! Form::text('email', null, ['class'=>'form-control']) !!}
-  </div>
+      {!! Form::label('name', 'Name:') !!}
+      {!! Form::text('name', null) !!}
 
-  <div class="form-group">
-    {!! Form::label('role_id', 'Role:') !!}
-    {!! Form::select('role_id', [''=>'Choose Role'] + $roles, null, ['class'=>'form-control']) !!}
-  </div>
+      {!! Form::label('email', 'Email:') !!}
+      {!! Form::text('email', null) !!}
 
-  <div class="form-group">
-    {!! Form::label('is_active', 'Status:') !!}
-    {!! Form::select('is_active', ['' => 'Select Status', 1 => 'Active', 0 => 'Inactive'], null, ['class'=>'form-control']) !!}
-  </div>
+      {!! Form::select('role_id', [''=>'Choose Role'] + $roles, null) !!}
 
-  <div class="form-group">
-    {!! Form::label('photo_id', 'Photo:') !!}
-    {!! Form::file('photo_id', null, ['class'=>'form-control']) !!}
-  </div>
+      {!! Form::select('is_active', ['' => 'Select Status', 1 => 'Active', 0 => 'Inactive'], null) !!}
 
-  <div class="form-group">
-    {!! Form::label('password', 'Password:') !!}
-    {!! Form::password('password', ['class'=>'form-control']) !!}
-  </div>
+      {!! Form::file('photo_id', null) !!}
 
-  <div class="form-group">
-    {!! Form::submit('Create User', ['class'=>'btn btn-primary']) !!}
-  </div>
+      {!! Form::label('password', 'Password:') !!}
+      {!! Form::password('password') !!}
+
+    {!! Form::submit('Create User') !!}
   {!! Form::close() !!}
 
   @include('includes.errors')

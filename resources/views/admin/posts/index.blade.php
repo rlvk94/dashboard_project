@@ -32,7 +32,7 @@
       @if($posts)
         @foreach($posts as $post)
           <tr>
-            <td><img src="{{ $post->photo ? $post->photo->file : 'http://via.placeholder.com/50x50' }}" height="50"></td>
+            <td><div class="image" style="background-image: url('{{ $post->photo ? $post->photo->file : 'http://via.placeholder.com/50x50' }}');" height="50"></div></td>
             <td><a href="{{ route('posts.edit', $post->id) }}">{{ $post->title }}</a></td>
             <td>{{ $post->category ? $post->category->name : 'Uncategorized' }}</td>
             <td>{{ $post->user->name}}</td>

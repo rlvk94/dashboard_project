@@ -49,3 +49,17 @@ $(".mediaItemContainer").click(function() {
 $(".mediaItemContainer .buttons").click(function(e) {
   e.stopPropagation();
 });
+
+$(".input-group input").focusin(function() {
+  $(this).siblings("label").addClass("focus");
+});
+
+$(".input-group input").focusout(function() {
+  if ($(this).val() == "") {
+    $(this).siblings("label").removeClass("focus");
+  }
+});
+
+if ($(".input-group input").val() != "") {
+  $(this).siblings("label").addClass("focus");
+}

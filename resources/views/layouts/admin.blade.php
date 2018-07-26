@@ -43,7 +43,7 @@
         </div>
 
         <div class="right">
-          <button class="new">New</button>
+          <button class="btn">New</button>
           <div class="avatar" style="background-image: url('{{ Auth::user()->photo ? Auth::user()->photo->file : 'http://via.placeholder.com/50x50' }}');"></div>
           <div class="userMenu">
             <div class="triangle"></div>

@@ -71,7 +71,8 @@ __webpack_require__(1);
 __webpack_require__(2);
 __webpack_require__(3);
 __webpack_require__(4);
-module.exports = __webpack_require__(5);
+__webpack_require__(5);
+module.exports = __webpack_require__(6);
 
 
 /***/ }),
@@ -933,6 +934,26 @@ $(".mediaItemContainer").click(function () {
 $(".mediaItemContainer .buttons").click(function (e) {
   e.stopPropagation();
 });
+
+$(".input-group input").focusin(function () {
+  $(this).siblings("label").addClass("focus");
+});
+
+$(".input-group input").focusout(function () {
+  if ($(this).val() == "") {
+    $(this).siblings("label").removeClass("focus");
+  }
+});
+
+if ($(".input-group input").val() != "") {
+  $(this).siblings("label").addClass("focus");
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
